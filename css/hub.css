@@ -1,0 +1,477 @@
+/* ============================================================
+   Jibran Khan — Follower Hub (link-in-bio)
+   Reuses tokens, grain & cursor from style.css
+   ============================================================ */
+
+.hub-body {
+  background: #0a0a0a;
+  color: var(--cream);
+  min-height: 100vh;
+}
+
+.hub {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 5rem) clamp(1.2rem, 5vw, 2rem) 3rem;
+  overflow: hidden;
+}
+
+/* ambient backdrop */
+.hub__ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.hub__ambient img {
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  margin: -10% 0 0 -10%;
+  filter: blur(70px) saturate(1.1) brightness(0.5);
+  opacity: 0.55;
+}
+.hub::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(120% 90% at 50% 0%, rgba(221, 106, 43, 0.14), transparent 55%),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.2), #0a0a0a 78%);
+}
+
+/* ---------- Hero ---------- */
+.hub__hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+.hub__avatar {
+  width: clamp(110px, 30vw, 140px);
+  height: clamp(110px, 30vw, 140px);
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--accent), #f0a06a 60%, var(--accent));
+  box-shadow: 0 20px 50px -18px rgba(221, 106, 43, 0.6);
+}
+.hub__avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0a0a0a;
+}
+.hub__name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  line-height: 0.95;
+}
+.hub__handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(239, 233, 223, 0.22);
+  border-radius: 999px;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.hub__handle:hover {
+  border-color: var(--accent);
+  background: rgba(221, 106, 43, 0.12);
+}
+.hub__handle .ig-icon {
+  width: 15px;
+  height: 15px;
+}
+.hub__handle em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 500;
+}
+.hub__bio {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 3.4vw, 1.25rem);
+  line-height: 1.4;
+  color: rgba(239, 233, 223, 0.82);
+  max-width: 24em;
+}
+.hub__bio em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* ---------- Link stack ---------- */
+.hub__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* dropdown card */
+.drop {
+  background: rgba(239, 233, 223, 0.05);
+  border: 1px solid rgba(239, 233, 223, 0.13);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.drop:hover {
+  border-color: rgba(239, 233, 223, 0.28);
+}
+.drop--accent {
+  border-color: rgba(221, 106, 43, 0.4);
+  background: rgba(221, 106, 43, 0.07);
+}
+.drop--accent:hover {
+  border-color: var(--accent);
+}
+
+.drop__head,
+.hub__flat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+  text-decoration: none;
+  color: var(--cream);
+}
+.drop__head::-webkit-details-marker {
+  display: none;
+}
+.drop__ico {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  border-radius: 12px;
+  background: rgba(239, 233, 223, 0.08);
+}
+.drop__ico .ig-icon {
+  width: 20px;
+  height: 20px;
+}
+.drop__txt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.drop__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+.drop__sub {
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  color: rgba(239, 233, 223, 0.5);
+}
+.drop__chev {
+  width: 11px;
+  height: 11px;
+  flex: none;
+  border-right: 2px solid rgba(239, 233, 223, 0.6);
+  border-bottom: 2px solid rgba(239, 233, 223, 0.6);
+  transform: rotate(45deg);
+  transition: transform 0.35s var(--ease);
+  margin-right: 4px;
+}
+.drop[open] .drop__chev {
+  transform: rotate(-135deg);
+}
+
+.drop__body {
+  padding: 0 0.75rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  animation: dropOpen 0.4s var(--ease);
+}
+@keyframes dropOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+.drop__note {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  line-height: 1.4;
+  color: rgba(239, 233, 223, 0.78);
+  padding: 0.4rem 0.5rem 0.6rem;
+}
+.drop__note em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* inner links */
+.link {
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 0.7rem;
+  align-items: center;
+  padding: 0.75rem 0.85rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--cream);
+  background: rgba(239, 233, 223, 0.02);
+  transition: background 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.link:hover {
+  background: rgba(239, 233, 223, 0.09);
+  transform: translateX(4px);
+}
+.link__k {
+  grid-row: 1 / 3;
+  color: var(--accent);
+  font-size: 0.85rem;
+  text-align: center;
+}
+.link__t {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.link__d {
+  grid-column: 2;
+  font-size: 0.82rem;
+  color: rgba(239, 233, 223, 0.55);
+  line-height: 1.35;
+}
+.link__arrow {
+  grid-row: 1 / 3;
+  grid-column: 3;
+  color: rgba(239, 233, 223, 0.5);
+  font-size: 1rem;
+  transition: color 0.25s var(--ease);
+}
+.link:hover .link__arrow {
+  color: var(--accent);
+}
+
+/* flat single-row links */
+.hub__flat {
+  background: rgba(239, 233, 223, 0.05);
+  border: 1px solid rgba(239, 233, 223, 0.13);
+  border-radius: 18px;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.hub__flat:hover {
+  border-color: rgba(239, 233, 223, 0.28);
+  background: rgba(239, 233, 223, 0.08);
+}
+.hub__flat .link__arrow {
+  grid-row: auto;
+  color: rgba(239, 233, 223, 0.5);
+}
+.hub__flat:hover .link__arrow {
+  color: var(--accent);
+}
+
+/* ---------- Education groups + video thumbnails ---------- */
+.drop__body--edu {
+  gap: 1.7rem;
+  padding-bottom: 1rem;
+}
+.edu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.edu__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 0.3rem 0.55rem;
+  border-bottom: 1px solid rgba(239, 233, 223, 0.1);
+}
+.edu__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
+}
+.edu__meta {
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  color: rgba(239, 233, 223, 0.5);
+}
+
+.vidgrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.vidcell {
+  flex: 0 0 calc((100% - 3 * 0.7rem) / 4);
+  max-width: calc((100% - 3 * 0.7rem) / 4);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+@media (max-width: 480px) {
+  .vidcell {
+    flex: 0 0 calc((100% - 0.7rem) / 2);
+    max-width: calc((100% - 0.7rem) / 2);
+  }
+}
+.vid {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(239, 233, 223, 0.12);
+  background: #120e0c;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+}
+/* the real 3:4 image defines the tile height in normal flow (rock-solid everywhere) */
+.vid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.45s var(--ease);
+}
+.vid:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 34px -14px rgba(221, 106, 43, 0.6);
+}
+.vid:hover img {
+  transform: scale(1.04);
+}
+
+/* guide (doc) links */
+.guide {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-start;
+}
+.guide i {
+  font-style: normal;
+  transition: transform 0.25s var(--ease);
+}
+.guide:hover i {
+  transform: translate(2px, -2px);
+}
+.guide--btn {
+  padding: 0.42rem 0.85rem;
+  border: 1px solid rgba(221, 106, 43, 0.4);
+  border-radius: 999px;
+  flex: none;
+}
+.guide--btn:hover {
+  background: rgba(221, 106, 43, 0.12);
+}
+
+/* donate CTA */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.4rem 0.3rem 0.2rem;
+  padding: 0.95rem 1.15rem;
+  border-radius: 14px;
+  background: var(--accent);
+  color: #120a05;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 800;
+  transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.cta:hover {
+  background: #eb7d3d;
+  transform: translateY(-2px);
+}
+.cta i {
+  font-style: normal;
+}
+
+/* travel "coming soon" link — 2-col layout (no number) */
+.link--soon {
+  grid-template-columns: 1fr auto;
+  opacity: 0.78;
+}
+.link--soon .link__t,
+.link--soon .link__d {
+  grid-column: 1;
+}
+.link--soon .link__arrow {
+  grid-column: 2;
+}
+
+/* buy me a coffee */
+.hub__flat--coffee {
+  border-color: rgba(221, 106, 43, 0.4);
+  background: rgba(221, 106, 43, 0.08);
+}
+.hub__flat--coffee:hover {
+  border-color: var(--accent);
+  background: rgba(221, 106, 43, 0.14);
+}
+
+/* book a 1:1 — prominent solid CTA */
+.hub__flat--book {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.hub__flat--book:hover {
+  background: #eb7d3d;
+  border-color: #eb7d3d;
+}
+.hub__flat--book .drop__title {
+  color: #140b06;
+}
+.hub__flat--book .drop__sub {
+  color: rgba(20, 11, 6, 0.72);
+}
+.hub__flat--book .link__arrow {
+  color: rgba(20, 11, 6, 0.75);
+}
+.hub__flat--book:hover .link__arrow {
+  color: #140b06;
+}
+
+/* inline instagram glyph inside a title */
+.ig-icon--inline {
+  width: 17px;
+  height: 17px;
+  vertical-align: -3px;
+  margin-right: 0.15rem;
+}
+
+/* footer */
+.hub__foot {
+  text-align: center;
+  margin-top: 2.6rem;
+  color: rgba(239, 233, 223, 0.4);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}

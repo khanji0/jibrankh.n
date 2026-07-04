@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Local editor/tooling settings
+.claude/
+
+# Raw camera originals (processed versions live in images/)
+_source/
+
+# Misc
+*.heic

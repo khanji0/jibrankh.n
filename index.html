@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jibran Khan</title>
+  <meta name="description" content="Jibran Khan — Content creator. 50K+ community. Travel, fitness, fashion, storytelling & education." />
+  <meta property="og:title" content="Jibran Khan — Content Creator" />
+  <meta property="og:description" content="Content creator. 50K+ community. Travel, fitness, fashion, storytelling & education." />
+  <meta property="og:image" content="images/landing-jk.JPG" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,800;0,900;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Grain -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- SVG defs: Instagram glyph -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ig" viewBox="0 0 24 24">
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <!-- Minimal top bar -->
+  <header class="topbar">
+    <span class="topbar__logo">JK<i>®</i></span>
+    <a href="https://instagram.com/jibrankh.n" target="_blank" rel="noopener" class="topbar__follow magnetic" data-cursor="hover">
+      <svg class="ig-icon"><use href="#ig"/></svg>
+      <span>Follow</span><em>50K+</em>
+    </a>
+  </header>
+
+  <!-- ===== Cover ===== -->
+  <section class="cover" id="cover">
+
+    <!-- ambient blurred backdrop -->
+    <div class="cover__ambient" aria-hidden="true">
+      <img src="images/bg-blur.jpg" alt="" />
+    </div>
+
+    <!-- corner metadata -->
+    <div class="meta meta--tl"><span class="mono"></span><span class="mono"></span></div>
+    <div class="meta meta--tr"><span class="mono"></span><span class="mono"></span></div>
+    <div class="meta meta--bl">
+      <a href="https://instagram.com/jibrankh.n" target="_blank" rel="noopener" class="meta__ig" data-cursor="hover">
+        <svg class="ig-icon"><use href="#ig"/></svg><span class="mono">@JIBRANKH.N</span>
+      </a>
+    </div>
+    <div class="meta meta--br"><span class="mono">50K+ COMMUNITY</span><span class="mono">TRAVEL · FITNESS · FASHION</span></div>
+
+    <!-- stage: photo (back) → name (mid) → cutout (front) -->
+    <div class="cover__stage" id="stage">
+      <img class="cover__photo" src="images/bg.jpg" alt="Jibran Khan" />
+      <h1 class="cover__name" aria-label="Jibran Khan" id="name">
+        <span class="cover__name-top"><span class="cover__word">Jibran</span></span>
+        <span class="cover__name-bottom"><span class="cover__word">Khan</span></span>
+      </h1>
+      <img class="cover__cutout" src="images/jk-cutout-web.png" alt="" id="cutout" />
+    </div>
+
+    <a href="hub.html" class="hubpill" data-cursor="hover" aria-label="For Followers">
+      <span class="hubpill__seg hubpill__seg--cta">For Followers<i aria-hidden="true">↗</i></span>
+    </a>
+
+    <a href="#pillars" class="cover__scroll" data-cursor="hover">
+      <span class="mono">SCROLL</span><i></i>
+    </a>
+  </section>
+
+  <!-- ===== Content marquee ===== -->
+  <section class="ticker" id="pillars" aria-hidden="true">
+    <div class="ticker__track" id="ticker">
+      <span>Travel <b>✦</b> Fitness <b>✦</b> Fashion <b>✦</b> Storytelling <b>✦</b> Education <b>✦</b> </span>
+      <span>Travel <b>✦</b> Fitness <b>✦</b> Fashion <b>✦</b> Storytelling <b>✦</b> Education <b>✦</b> </span>
+    </div>
+  </section>
+
+  <!-- ===== 3D Tornado card stream ===== -->
+  <section class="stream" id="work">
+    <div class="stream__pin">
+      <div class="stream__head">
+        <span class="mono">(02) — SELECTED CONTENT</span>
+        <h2 class="stream__title">The <em>feed.</em></h2>
+      </div>
+      <div class="stream__scene">
+        <div class="stream__helix" id="helix">
+          <a class="stream__card stream__card--reel" style="--i:0" href="https://www.instagram.com/reel/DS6kgTejj9p/" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g01.jpg" alt="" loading="lazy" /><span class="stream__play" aria-hidden="true">▶</span></a>
+          <a class="stream__card" style="--i:1" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g02.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card" style="--i:2" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g03.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card stream__card--reel" style="--i:3" href="https://www.instagram.com/reel/DSk-AlSETwY/" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g04.jpg" alt="" loading="lazy" /><span class="stream__play" aria-hidden="true">▶</span></a>
+          <a class="stream__card" style="--i:4" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g05.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card" style="--i:5" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g06.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card stream__card--reel" style="--i:6" href="https://www.instagram.com/reel/DQ9bbBnkYBK/" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g07.jpg" alt="" loading="lazy" /><span class="stream__play" aria-hidden="true">▶</span></a>
+          <a class="stream__card" style="--i:7" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g08.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card" style="--i:8" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g09.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card stream__card--reel" style="--i:9" href="https://www.instagram.com/reel/DXOM32TDhwf/" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g10.jpg" alt="" loading="lazy" /><span class="stream__play" aria-hidden="true">▶</span></a>
+          <a class="stream__card" style="--i:10" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g11.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card" style="--i:11" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g12.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card stream__card--reel" style="--i:12" href="https://www.instagram.com/reel/DY3tC0yu3Ef/" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g13.jpg" alt="" loading="lazy" /><span class="stream__play" aria-hidden="true">▶</span></a>
+          <a class="stream__card" style="--i:13" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g14.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card" style="--i:14" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g15.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card stream__card--reel" style="--i:15" href="https://www.instagram.com/reel/DStw1T0Do7j/" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g16.jpg" alt="" loading="lazy" /><span class="stream__play" aria-hidden="true">▶</span></a>
+          <a class="stream__card" style="--i:16" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g17.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card" style="--i:17" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g18.jpg" alt="" loading="lazy" /></a>
+          <a class="stream__card" style="--i:18" href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" data-cursor="hover"><img src="images/g19.jpg" alt="" loading="lazy" /></a>
+        </div>
+      </div>
+      </div>
+      <span class="stream__hint mono">SCROLL TO SPIN ✦ 10 STORIES</span>
+    </div>
+  </section>
+
+  <!-- ===== Stats ===== -->
+  <section class="stats" id="stats">
+    <div class="stats__loc reveal">
+      <div class="pin" aria-hidden="true"><span>🇺🇸</span></div>
+      <div class="stats__loc-txt">
+        <span class="mono">CURRENTLY IN</span>
+        <strong>United States</strong>
+      </div>
+    </div>
+    <div class="stats__grid">
+      <div class="stat reveal"><div class="stat__num" data-count="50" data-suffix="K+">0</div><div class="stat__cap mono">Followers</div></div>
+      <div class="stat reveal"><div class="stat__num" data-count="55" data-suffix="M+">0</div><div class="stat__cap mono">Total Views</div></div>
+      <div class="stat reveal"><div class="stat__num" data-count="42" data-suffix="/50">0</div><div class="stat__cap mono">US States Travelled</div></div>
+      <div class="stat reveal"><div class="stat__num" data-count="10" data-suffix="+">0</div><div class="stat__cap mono">Brand Collabs</div></div>
+    </div>
+  </section>
+
+  <!-- ===== Audience / Demographics ===== -->
+  <section class="demo" id="audience">
+    <span class="mono demo__label">(03) — WHO'S WATCHING</span>
+    <h2 class="demo__title">The <em>audience.</em></h2>
+
+    <div class="demo__grid">
+
+      <!-- Gender split -->
+      <div class="demo__card reveal">
+        <span class="mono demo__k">GENDER SPLIT</span>
+        <div class="split">
+          <div class="split__bar">
+            <span class="split__seg split__seg--men" style="--w:56.2%"></span>
+            <span class="split__seg split__seg--women" style="--w:43.8%"></span>
+          </div>
+          <div class="split__legend">
+            <span class="split__item"><i class="dot dot--men"></i>Men <b>56.2%</b></span>
+            <span class="split__item"><i class="dot dot--women"></i>Women <b>43.8%</b></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top age ranges -->
+      <div class="demo__card reveal">
+        <span class="mono demo__k">TOP AGE RANGES</span>
+        <ul class="ages">
+          <li class="ages__row"><span class="ages__lab">18–24</span><span class="ages__track"><span class="ages__fill" style="--v:46.2%"></span></span><span class="ages__pct mono">46.2%</span></li>
+          <li class="ages__row"><span class="ages__lab">25–34</span><span class="ages__track"><span class="ages__fill" style="--v:25.8%"></span></span><span class="ages__pct mono">25.8%</span></li>
+          <li class="ages__row"><span class="ages__lab">13–17</span><span class="ages__track"><span class="ages__fill" style="--v:15.5%"></span></span><span class="ages__pct mono">15.5%</span></li>
+          <li class="ages__row"><span class="ages__lab">35–44</span><span class="ages__track"><span class="ages__fill" style="--v:7.5%"></span></span><span class="ages__pct mono">7.5%</span></li>
+        </ul>
+      </div>
+
+      <!-- Top countries -->
+      <div class="demo__card reveal">
+        <span class="mono demo__k">TOP COUNTRIES</span>
+        <ol class="geo">
+          <li class="geo__row"><span class="geo__flag">🇺🇸</span><span class="geo__name">United States</span><span class="geo__rank mono">01</span></li>
+          <li class="geo__row"><span class="geo__flag">🇵🇰</span><span class="geo__name">Pakistan</span><span class="geo__rank mono">02</span></li>
+          <li class="geo__row"><span class="geo__flag">🇮🇳</span><span class="geo__name">India</span><span class="geo__rank mono">03</span></li>
+          <li class="geo__row"><span class="geo__flag">🇧🇩</span><span class="geo__name">Bangladesh</span><span class="geo__rank mono">04</span></li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Brands ===== -->
+  <section class="brands" id="brands">
+    <span class="mono brands__label">COLLABORATIONS &amp; PARTNERS</span>
+    <div class="brands__marquee" aria-hidden="true">
+      <div class="brands__track">
+        <span class="brands__set">
+          <span class="brand">Elaichi&nbsp;Co.</span><span class="brand-dot">✦</span>
+          <span class="brand">Temu</span><span class="brand-dot">✦</span>
+          <span class="brand">LAAM</span><span class="brand-dot">✦</span>
+          <span class="brand">Geneomx</span><span class="brand-dot">✦</span>
+        </span>
+        <span class="brands__set">
+          <span class="brand">Elaichi&nbsp;Co.</span><span class="brand-dot">✦</span>
+          <span class="brand">Temu</span><span class="brand-dot">✦</span>
+          <span class="brand">LAAM</span><span class="brand-dot">✦</span>
+          <span class="brand">Geneomx</span><span class="brand-dot">✦</span>
+        </span>
+      </div>
+    </div>
+    <p class="brands__note reveal">Trusted by brands to tell stories that convert and communities that stick around.</p>
+  </section>
+
+  <!-- ===== Footer / CTA ===== -->
+  <footer class="foot" id="contact">
+    <span class="mono foot__label">REACH OUT</span>
+    <a href="mailto:jibranakhan6@gmail.com" class="foot__mail" data-cursor="hover">
+      <span>Let's make something</span><span><em>together.</em></span>
+    </a>
+
+    <!-- collaborate seal: JIBRAN KHAN + handshake -->
+    <div class="seal" aria-hidden="true">
+      <svg class="seal__ring" viewBox="0 0 140 140">
+        <defs><path id="sealPath" d="M70,70 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs>
+        <text><textPath href="#sealPath" startOffset="0">JIBRAN KHAN — LET'S COLLABORATE — </textPath></text>
+      </svg>
+      <svg class="seal__hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m11 17 2 2a1 1 0 1 0 3-3"/>
+        <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/>
+        <path d="m21 3 1 11h-2"/>
+        <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/>
+        <path d="M3 4h8"/>
+      </svg>
+    </div>
+
+    <div class="foot__row">
+      <span class="mono foot__reach">Reach out —</span>
+      <a href="mailto:jibranakhan6@gmail.com" class="magnetic" data-cursor="hover">jibranakhan6@gmail.com</a>
+      <span class="foot__sep" aria-hidden="true">·</span>
+      <a href="https://www.instagram.com/jibrankh.n" target="_blank" rel="noopener" class="foot__ig magnetic" data-cursor="hover">
+        <svg class="ig-icon"><use href="#ig"/></svg><span>@jibrankh.n</span>
+      </a>
+    </div>
+    <div class="foot__base">
+      <span class="mono">© 2026 JIBRAN KHAN</span>
+      <span class="mono foot__tags">TRAVEL · FITNESS · FASHION · STORYTELLING · EDUCATION</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
