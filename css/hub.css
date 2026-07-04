@@ -129,13 +129,6 @@
 .drop:hover {
   border-color: rgba(239, 233, 223, 0.28);
 }
-.drop--accent {
-  border-color: rgba(221, 106, 43, 0.4);
-  background: rgba(221, 106, 43, 0.07);
-}
-.drop--accent:hover {
-  border-color: var(--accent);
-}
 
 .drop__head,
 .hub__flat {
@@ -427,16 +420,6 @@
   grid-column: 2;
 }
 
-/* buy me a coffee */
-.hub__flat--coffee {
-  border-color: rgba(221, 106, 43, 0.4);
-  background: rgba(221, 106, 43, 0.08);
-}
-.hub__flat--coffee:hover {
-  border-color: var(--accent);
-  background: rgba(221, 106, 43, 0.14);
-}
-
 /* book a 1:1 — prominent solid CTA */
 .hub__flat--book {
   background: var(--accent);
@@ -457,6 +440,20 @@
 }
 .hub__flat--book:hover .link__arrow {
   color: #140b06;
+}
+/* clear divider between the education sections and the Book a 1:1 CTA */
+.drop__body--edu .hub__flat--book {
+  position: relative;
+  margin-top: 1rem;
+}
+.drop__body--edu .hub__flat--book::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  right: 0.2rem;
+  top: -1.35rem;
+  height: 1px;
+  background: rgba(239, 233, 223, 0.28);
 }
 
 /* inline instagram glyph inside a title */
